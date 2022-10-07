@@ -1,0 +1,7 @@
+{
+  "name": "GestionTask",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
