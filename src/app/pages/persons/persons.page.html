@@ -13,18 +13,7 @@
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col *ngFor="let p of getPeople()" size="9" size-sm="3" class="ion-align-self-center">
-        <ion-card>
-          <ion-card-header>
-            <img src="{{p.foto}}">
-            <ion-card-subtitle>{{p.apodo}}</ion-card-subtitle>
-            <ion-card-title>{{p.nombre}}</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
-        </ion-card>
+        <app-people [p]="p"></app-people>
       </ion-col>
     </ion-row>
   </ion-grid>
