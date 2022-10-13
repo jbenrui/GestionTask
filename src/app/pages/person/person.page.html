@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons>
+      <ion-back-button slot="start" defaultHref="/">Return to Home</ion-back-button>
+    </ion-buttons>
+    <ion-title slot="end">People</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--Se queda pegado en la derecha. Solucionar.-->
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col *ngFor="let person of getPeople()" size="9" size-sm="3" class="ion-align-self-center">
+        <app-people [p]="person"></app-people>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

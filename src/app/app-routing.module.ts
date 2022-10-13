@@ -12,8 +12,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'persons',
-    loadChildren: () => import('./pages/persons/persons.module').then( m => m.PersonsPageModule)
+    path: 'person',
+    loadChildren: () => import('./pages/person/person.module').then( m => m.PersonPageModule)
   },
   {
     path: 'task',
