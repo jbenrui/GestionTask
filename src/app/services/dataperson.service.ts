@@ -5,7 +5,7 @@ import { Person } from '../models/person.model';
   providedIn: 'root'
 })
 export class DataPersonService {
-  person:Person[] = [
+  private _person:Person[] = [
     {
       id: 0,
       nombre: 'Jose Antonio',
@@ -31,14 +31,38 @@ export class DataPersonService {
       foto: 'http://drive.google.com/uc?export=view&id=1qJlC0am4aM0KdHcafo3vZSdMAV2s2B_S'
     }
   ]
-  constructor() { }
 
-  public getPersons(): Person[]{ //devuelve el objeto persona del array
-    return this.person;
+
+  id:number = this._person.length+1;
+  constructor() {
+
   }
-  
-  public getPersonsById(id:number): Person{
-    return this.person[id];
+
+  getPeople(){
+    return this._person;
+  }
+
+  getPersonById(id:number){
+    return this._person.find(p=>p.id==id);
+  }
+
+  deletePersonById(id:number){
+    this._person = this._person.filter(p=>p.id != id); 
+  }
+
+  addPerson(person:Person){
+    person.id = this.id++;
+    this._person.push(person);
+  }
+
+  updatePerson(person:Person){
+    var _person = this._person.find(p=>p.id==person.id);
+    if(_person){
+      _person.nombre = person.nombre;
+      _person.apodo = person.apodo;
+      _person.foto = person.foto;
+    }
+    
   }
 
   

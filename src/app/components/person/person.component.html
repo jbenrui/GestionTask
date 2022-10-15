@@ -1,12 +1,13 @@
 <ion-card>
-  <ion-card-header>
-    <img src="{{person.foto}}">
-    <ion-card-subtitle>{{person.apodo}}</ion-card-subtitle>
-    <ion-card-title>{{person.nombre}}</ion-card-title>
-  </ion-card-header>
+    <ion-card-header>
+      <img *ngIf="!person.foto" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+      <img *ngIf="person.foto" src="{{person.foto}}">
+      <ion-card-subtitle>{{person.apodo}}</ion-card-subtitle>
+      <ion-card-title>{{person.nombre}}</ion-card-title>
+    </ion-card-header>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
+    <ion-card-content>
+      <ion-button (click)="onEditClick()"><ion-icon name="create-outline"></ion-icon></ion-button>
+      <ion-button color="danger" (click)="onDeleteClick()"><ion-icon name="trash-outline"></ion-icon></ion-button>
+    </ion-card-content>
 </ion-card>
