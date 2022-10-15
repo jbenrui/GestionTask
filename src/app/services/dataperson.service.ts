@@ -31,8 +31,6 @@ export class DataPersonService {
       foto: 'http://drive.google.com/uc?export=view&id=1qJlC0am4aM0KdHcafo3vZSdMAV2s2B_S'
     }
   ]
-
-
   id:number = this._person.length+1;
   constructor() {
 
@@ -56,14 +54,12 @@ export class DataPersonService {
   }
 
   updatePerson(person:Person){
-    var _person = this._person.find(p=>p.id==person.id);
-    if(_person){
-      _person.nombre = person.nombre;
-      _person.apodo = person.apodo;
-      _person.foto = person.foto;
+    var _people = this._person.find(p=>p.id==person.id);
+    if(_people){
+      _people.nombre = person.nombre;
+      _people.apodo = person.apodo;
+      _people.foto = person.foto;
     }
     
   }
-
-  
 }

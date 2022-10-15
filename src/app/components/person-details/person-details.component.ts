@@ -26,7 +26,7 @@ export class PersonDetailsComponent implements OnInit {
   constructor(private formBuilder:FormBuilder, //Instancia la clase para crear el formulario.
               private modal:ModalController //Instacia la clase, esta clase sirve para controlar el evento del modal. Poder crearlo y cerrarlo
     ) {
-    this.form = this.formBuilder.group({
+    this.form = this.formBuilder.group({ //Creo el formulario
       id:[null],
       nombre:['',[Validators.required]],
       apodo:['',[Validators.required]],
