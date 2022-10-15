@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title slot="end">Formulario de Alta Persona.</ion-title>
     <ion-buttons slot="start">
-      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+      <ion-button (click)="onDismiss(null)">X</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,13 +12,13 @@
         <ion-label position="floating">
           Nombre
         </ion-label>
-        <ion-input type="text" placeholder="Introduce tu nombre" formControlName="name"></ion-input>
+        <ion-input type="text" placeholder="Introduce tu nombre" formControlName="nombre"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           Nickname
         </ion-label>
-        <ion-input type="text" placeholder="Introduce tu apodo" formControlName="nickname"></ion-input>
+        <ion-input type="text" placeholder="Introduce tu apodo" formControlName="apodo"></ion-input>
       </ion-item>
       <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
     </form>

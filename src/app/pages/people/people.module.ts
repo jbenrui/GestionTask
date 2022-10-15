@@ -18,6 +18,6 @@ import { PeoplePage } from './people.page';
     ReactiveFormsModule,
     PeoplePageRoutingModule
   ],
-  declarations: [PersonDetailsComponent, PersonComponent, PeoplePage]
+  declarations: [PersonDetailsComponent, PersonComponent, PeoplePage,]
 })
 export class PeoplePageModule {}

@@ -16,9 +16,9 @@ export class PersonDetailsComponent implements OnInit {
   //Traigo los datos con Input y uso set para modificar
   @Input('person') set person(person:Person){
     if(person){// Si existe persona.
-      this.form.controls.name.setValue(person.nombre); //Pondra este valor
-      this.form.controls.name.setValue(person.apodo);
-      this.form.controls.name.setValue(person.foto);
+      this.form.controls.nombre.setValue(person.nombre); //Pondra este valor
+      this.form.controls.apodo.setValue(person.apodo);
+      this.form.controls.foto.setValue(person.foto);
       this.mode = "Edit";
     }
 
@@ -28,10 +28,10 @@ export class PersonDetailsComponent implements OnInit {
     ) {
     this.form = this.formBuilder.group({
       id:[null],
-      name:['',[Validators.required]],
-      nickname:['',[Validators.required]],
-      picture:['']
-    })
+      nombre:['',[Validators.required]],
+      apodo:['',[Validators.required]],
+      foto:['']
+    });
   }
 
   ngOnInit() {}

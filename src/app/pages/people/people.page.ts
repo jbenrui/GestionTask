@@ -16,7 +16,7 @@ export class PeoplePage implements OnInit{
     private dataPerson:DataPersonService, //Instancio esta clase la cual contendra los datos de la persona.
     private modal:ModalController,
     private alert:AlertController, //Instacia la clase la cual me permite controlar alertas
-    private activatedRoute : ActivatedRoute //preguntar para que sirve
+    
   ) { }
 
   ngOnInit() {

@@ -21,6 +21,7 @@ export class PersonComponent implements OnInit {
   }
 
   onEditClick(){
+    console.log()
     this.onEdit.emit(this.person);
   }
 
