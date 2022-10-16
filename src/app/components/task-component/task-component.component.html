@@ -1,0 +1,16 @@
+<ion-card>
+  <ion-card-header>
+    <img *ngIf="!task.foto" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+    <img *ngIf="task.foto" src="{{task.foto}}">
+    <ion-card-subtitle>{{task.tiempo}} segundos</ion-card-subtitle>
+    <ion-card-title>{{task.nombre}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <!--
+      <ion-button (click)="onEditClick()"><ion-icon name="create-outline"></ion-icon></ion-button>
+      <ion-button color="danger" (click)="onDeleteClick()"><ion-icon name="trash-outline"></ion-icon></ion-button>
+    -->
+    
+  </ion-card-content>
+</ion-card>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { PersonDetailsComponent } from 'src/app/components/person-details/person-details.component';
 import { Person } from 'src/app/models/person.model';
