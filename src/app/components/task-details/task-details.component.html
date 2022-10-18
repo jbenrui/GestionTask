@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="end">Formulario de Alta Tarea.</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onDismiss(null)">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <form [formGroup]="formTask" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">
+          Nombre
+        </ion-label>
+        <ion-input type="text" placeholder="Introduce el nombre de la tarea" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          0000s
+        </ion-label>
+        <ion-input type="text" placeholder="Introduce el tiempo estimado de realizacion." formControlName="tiempo"></ion-input>
+      </ion-item>
+      <ion-button [disabled]="!formTask.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+    </form>
+</ion-content>

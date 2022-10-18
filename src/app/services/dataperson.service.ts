@@ -60,8 +60,8 @@ export class DataPersonService {
       _people.nombre = person.nombre;
       _people.apodo = person.apodo;
       _people.foto = person.foto;
-      console.log(_people +"Cargado");
+      
     }
-    
+    console.log(_people);
   }
 }
