@@ -16,6 +16,7 @@ export class PersonDetailsComponent implements OnInit {
   //Traigo los datos con Input y uso set para modificar
   @Input('person') set person(person:Person){
     if(person){// Si existe persona.
+      this.form.controls.id.setValue(person.id);
       this.form.controls.nombre.setValue(person.nombre); //Pondra este valor
       this.form.controls.apodo.setValue(person.apodo);
       this.form.controls.foto.setValue(person.foto);

@@ -27,7 +27,6 @@ export class PeoplePage implements OnInit{
   }
 
   async presentPersonForm(person:Person){
-    console.log("entre en el formulario");
     const modal = await this.modal.create({
       component:PersonDetailsComponent,
       componentProps:{
@@ -85,7 +84,7 @@ export class PeoplePage implements OnInit{
   }
   
   onDeletePerson(person){
-   this.onDeleteAlert(person);
+    this.onDeleteAlert(person);
     
   }
 }

@@ -55,10 +55,12 @@ export class DataPersonService {
 
   updatePerson(person:Person){
     var _people = this._person.find(p=>p.id==person.id);
+    
     if(_people){
       _people.nombre = person.nombre;
       _people.apodo = person.apodo;
       _people.foto = person.foto;
+      console.log(_people +"Cargado");
     }
     
   }
