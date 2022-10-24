@@ -7,25 +7,25 @@ import { Person } from '../models/person.model';
 export class DataPersonService {
   private _person:Person[] = [
     {
-      id: 0,
+      id: 1,
       nombre: 'Jose Antonio',
       apodo:  'Hijo mayor',
       foto: 'http://drive.google.com/uc?export=view&id=1n8J4bcNmkE0yMxQcbA4WFFEwWHQCqrmh'
     },
     {
-      id: 1,
+      id: 2,
       nombre: 'Francisco Javier',
       apodo:  'Hijo menor',
       foto: 'http://drive.google.com/uc?export=view&id=18dDByyENiKjR7AXZSNub738s4SjBPrx_'
     },
     {
-      id: 2,
+      id: 3,
       nombre: 'Jose Antonio',
       apodo:  'Padre',
       foto: 'http://drive.google.com/uc?export=view&id=1jNR-9riiym0WIPpnHQe24-7Xl3HNJpk_'
     },
     {
-      id: 3,
+      id: 4,
       nombre: 'Maria Dolores',
       apodo:  'Madre',
       foto: 'http://drive.google.com/uc?export=view&id=1VFUSfQZoVjVFkI6m73vba2_G4oGDUR7O'

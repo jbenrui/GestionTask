@@ -7,25 +7,25 @@ import { Task } from '../models/task.model';
 export class DataTaskService {
   private _task:Task[] = [
     {
-      id: 0,
+      id: 1,
       nombre: 'Lavar los platos',
       tiempo:  3600,
       foto: 'http://drive.google.com/uc?export=view&id=1LiA446NGoXyZ9w8hwdSrR6YD5qs36FsH'
     },
     {
-      id: 1,
+      id: 2,
       nombre: 'Doblar la ropa',
       tiempo:  1300,
       foto: 'http://drive.google.com/uc?export=view&id=1F46gjL67SVSk1Elny3wSLxfOi2JZEDlL'
     },
     {
-      id: 2,
+      id: 3,
       nombre: 'Limpiar el polvo',
       tiempo:  850,
       foto: 'http://drive.google.com/uc?export=view&id=1XWS7bMzhdypPPkKHH801tdtfoX-_3BhL'
     },
     {
-      id: 3,
+      id: 4,
       nombre: 'Preparar la cena',
       tiempo:  2400,
       foto: 'http://drive.google.com/uc?export=view&id=1cdWDAyNb41PKLDYBY7oqEJr6Oq41-hgD'
