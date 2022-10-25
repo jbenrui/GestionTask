@@ -33,4 +33,11 @@ export class DataAssingmentService{
     getAssingsById(id:number){
         return this._assing.find(a => a.id == id);
     }
+
+    getAssingsByIdPerson(id:number){
+        return this._assing.find(a => a.id == id);
+    }
+    getAssingsByIdTask(id:number){
+        return this._assing.find(a => a.id == id);
+    }
 }

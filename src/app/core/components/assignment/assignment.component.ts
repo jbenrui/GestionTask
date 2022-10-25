@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Assing } from 'src/app/models/assing.model';
-import { DataPersonService } from 'src/app/services/dataperson.service';
-import { DataTaskService } from 'src/app/services/datatask.service';
+import { Assing } from '../../models/assing.model';
+import { DataPersonService } from '../../services/dataperson.service';
+import { DataTaskService } from '../../services/datatask.service';
+
 
 @Component({
   selector: 'app-assignment',

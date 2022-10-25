@@ -1,0 +1,6 @@
+export * from './services/dataassignment.service'
+export * from './services/dataperson.service'
+export * from './services/datatask.service'
+export * from './models/person.model'
+export * from './models/task.model'
+export * from './models/assing.model'

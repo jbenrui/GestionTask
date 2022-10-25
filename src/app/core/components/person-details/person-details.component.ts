@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Person } from 'src/app/models/person.model'
+import { Person } from '../../models/person.model';
+
 
 @Component({
   selector: 'app-person-details',

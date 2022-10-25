@@ -1,3 +1,25 @@
-<ion-buttons slot="start">
-  <ion-button (click)="onDismiss(null)">Cancel</ion-button>
-</ion-buttons>
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="end">Formulario de Edición de Asignaciones.</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onDismiss(null)">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">
+        Nombre
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce tu nombre" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Nickname
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce tu apodo" formControlName="apodo"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+  </form>
+</ion-content>

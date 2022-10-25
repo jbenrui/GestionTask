@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
-import { AssignmentDetailsComponent } from 'src/app/components/assignment-details/assignment-details.component';
-import { Assing } from 'src/app/models/assing.model';
-import { DataAssingmentService } from 'src/app/services/dataassignment.service';
+import { DataAssingmentService, Assing } from 'src/app/core';
+import { AssignmentDetailsComponent } from 'src/app/core/components/assignment-details/assignment-details.component';
 
 
 @Component({
@@ -11,6 +10,8 @@ import { DataAssingmentService } from 'src/app/services/dataassignment.service';
   styleUrls: ['./assigns.page.scss'],
 })
 export class AsingnsPage implements OnInit {
+  
+
   public assings:Assing;
   constructor(
     private _dataAssingment:DataAssingmentService,
@@ -21,8 +22,10 @@ export class AsingnsPage implements OnInit {
   ngOnInit() {
   }
 
+  
   getAssing(){
     return this._dataAssingment.getAssings();
+    
   }
 
   async presentAssingForm(assing:Assing){

@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Assing } from 'src/app/models/assing.model';
+import { Assing } from '../../models/assing.model';
+
 
 @Component({
   selector: 'app-assignment-details',

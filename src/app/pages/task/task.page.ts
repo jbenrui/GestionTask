@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
-import { TaskDetailsComponent } from 'src/app/components/task-details/task-details.component';
-import { Task } from 'src/app/models/task.model';
-import { DataTaskService } from 'src/app/services/datatask.service';
+import { DataAssingmentService, DataTaskService, Task } from 'src/app/core';
+import { TaskDetailsComponent } from 'src/app/core/components/task-details/task-details.component';
+
+
 @Component({
   selector: 'app-task',
   templateUrl: './task.page.html',
@@ -10,11 +11,13 @@ import { DataTaskService } from 'src/app/services/datatask.service';
 })
 export class TaskPage implements OnInit {
   public task:Task;
+ 
   
   constructor(
     private dataTask:DataTaskService,  
     private modal:ModalController,
-    private alert:AlertController //Instacia la clase la cual me permite controlar alertas
+    private alert:AlertController, //Instacia la clase la cual me permite controlar alertas
+    private assingSVC:DataAssingmentService
   ) { }
 
   ngOnInit() {
@@ -68,7 +71,13 @@ export class TaskPage implements OnInit {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.dataTask.deleteTaskById(task.id);
+            //if(task.id == this.assingSVC.getAssingsByIdPerson(task.id).idTask){ //Si la persona esta asignada a una tarea no dejara no podra borrarla.
+              //console.log("Esta tarea esta asignada a una persona.");
+              
+              
+           // }else{
+              this.dataTask.deleteTaskById(task.id);
+           // }
           },
         },
       ],

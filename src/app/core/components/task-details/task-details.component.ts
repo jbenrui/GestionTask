@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Task } from 'src/app/models/task.model';
+import { Task } from '../../models/task.model';
+
 
 @Component({
   selector: 'app-task-details',

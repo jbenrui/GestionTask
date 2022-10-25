@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
-import { PersonDetailsComponent } from 'src/app/components/person-details/person-details.component';
-import { Person } from 'src/app/models/person.model';
-import { DataPersonService } from 'src/app/core/services/dataperson.service';
+import { PersonDetailsComponent } from 'src/app/core/components/person-details/person-details.component';
+import { DataAssingmentService, DataPersonService, Person } from 'src/app/core';
 
 @Component({
   selector: 'app-people',
@@ -15,6 +14,7 @@ export class PeoplePage implements OnInit{
     private dataPerson:DataPersonService, //Instancio esta clase la cual contendra los datos de la persona.
     private modal:ModalController,
     private alert:AlertController, //Instacia la clase la cual me permite controlar alertas
+    private assingSVC:DataAssingmentService //Instacia la clase del servicio assignment
     
   ) { }
 
@@ -72,7 +72,14 @@ export class PeoplePage implements OnInit{
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.dataPerson.deletePersonById(person.id);
+            //if(person.id == this.assingSVC.getAssingsByIdPerson(person.id).idPerson){ //Si la persona esta asignada a una tarea no dejara no podra borrarla.
+              console.log("Esta persona esta asignada a una tarea.");
+              
+              
+            //}else{
+              this.dataPerson.deletePersonById(person.id);
+           // }
+            
           },
         },
       ],

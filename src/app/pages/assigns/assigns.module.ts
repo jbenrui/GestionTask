@@ -1,21 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { IonicModule } from '@ionic/angular';
-
-import { AsingnsPageRoutingModule } from './assigns-routing.module';
-
 import { AsingnsPage } from './assigns.page';
-import { AssignmentComponent } from 'src/app/components/assignment/assignment.component';
-import { AssignmentDetailsComponent } from 'src/app/components/assignment-details/assignment-details.component';
+import { CoreModule } from 'src/app/core/core.module';
+import { AssignmentComponent } from 'src/app/core/components/assignment/assignment.component';
+import { AssignmentDetailsComponent } from 'src/app/core/components/assignment-details/assignment-details.component';
+import { AsingnsPageRoutingModule } from './assigns-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ReactiveFormsModule,
+    CoreModule,
     AsingnsPageRoutingModule
   ],
   declarations: [AsingnsPage, AssignmentComponent , AssignmentDetailsComponent]

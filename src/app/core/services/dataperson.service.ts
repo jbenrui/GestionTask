@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../models/person.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,9 +31,12 @@ export class DataPersonService {
       apodo:  'Madre',
       foto: 'http://drive.google.com/uc?export=view&id=1VFUSfQZoVjVFkI6m73vba2_G4oGDUR7O'
     }
+
   ]
   id:number = this._person.length+1;
-  constructor() {
+  constructor(
+    
+  ) {
 
   }
 
