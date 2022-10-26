@@ -9,16 +9,13 @@
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
-      <ion-label position="floating">
-        Nombre
-      </ion-label>
-      <ion-input type="text" placeholder="Introduce tu nombre" formControlName="nombre"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">
-        Nickname
-      </ion-label>
-      <ion-input type="text" placeholder="Introduce tu apodo" formControlName="apodo"></ion-input>
+      <ion-list>
+        <ion-item >
+          <ion-select placeholder="Nombre Persona">
+            <ion-select-option *ngFor="let person of getPeople()" value="{{person.id}}">{{person.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
     </ion-item>
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
   </form>

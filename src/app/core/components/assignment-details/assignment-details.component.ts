@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { Assing } from '../../models/assing.model';
+import { Person } from '../../models/person.model';
+import { DataPersonService } from '../../services/dataperson.service';
 
 
 @Component({
@@ -14,6 +16,7 @@ export class AssignmentDetailsComponent implements OnInit {
   form:FormGroup;
   mode: "New" | "Edit" = "New"; //Da informacion sobre el estado del modal
 
+  
 
   @Input('assing') set assing(assing:Assing){
     if(assing){
@@ -26,6 +29,7 @@ export class AssignmentDetailsComponent implements OnInit {
 
   }
   constructor(private formBuilder:FormBuilder,
+              private personSVC:DataPersonService,
               private modal:ModalController //Instacia la clase, esta clase sirve para controlar el evento del modal. Poder crearlo y cerrarlo
     ) {
     this.form = this.formBuilder.group({ //Creo el formulario
@@ -36,6 +40,8 @@ export class AssignmentDetailsComponent implements OnInit {
     });
   }
 
+  @Input() person:Person;
+
   ngOnInit() {}
 
   onSubmit(){
@@ -44,6 +50,10 @@ export class AssignmentDetailsComponent implements OnInit {
 
   onDismiss(result){
     this.modal.dismiss(null,'cancel'); //Si el modal se cierra.No envia el objeto vacio por lo tanto no se modifica, ni se añade nada.
+  }
+
+  getPeople(){
+    return this.personSVC.getPeople();
   }
 
 }
