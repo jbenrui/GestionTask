@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Assing } from '../models/assing.model';
+import * as moment from 'moment-timezone';
 
 @Injectable({
     providedIn: 'root'
 })
 export class DataAssingmentService{
+
+    private moment:any = moment;
     private _assing:Assing[] = [
         {
             id:1,
             idPerson:1,
             idTask:1,
-            dateTime:'20/10/2022',
-            createdAt: '11:09'
+            dateTime:this.moment().add(1,'days').toLocaleString(),
+            createdAt:this.moment().toLocaleString()
 
         },
         {
             id:2,
             idPerson:2,
             idTask:2,
-            dateTime:'20/10/2022',
-            createdAt: '11:11'
+            dateTime:this.moment().add(1,'days').toLocaleString(),
+            createdAt:this.moment().toLocaleString()
         }
     ]
 
@@ -39,5 +42,26 @@ export class DataAssingmentService{
     }
     getAssingsByIdTask(id:number){
         return this._assing.find(a => a.id == id);
+    }
+
+    addAssing(assing:Assing){
+        console.log(assing);
+        assing.id = this.id++;
+        this._assing.push(assing);
+    }
+
+    updateAssing(assing:Assing){
+        var assignment = this._assing.find(p=>p.id==assing.id);
+    
+        if(assing){
+            assignment.idPerson = assing.idPerson;
+            assignment.idTask = assing.idTask;
+            assignment.dateTime = assing.dateTime;
+            
+        }
+    }
+
+    deleteAssignById(id:number){
+        this._assing = this._assing.filter(p=>p.id != id); 
     }
 }

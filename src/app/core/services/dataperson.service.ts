@@ -66,6 +66,5 @@ export class DataPersonService {
       _people.foto = person.foto;
       
     }
-    console.log(_people);
   }
 }

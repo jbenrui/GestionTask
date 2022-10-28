@@ -2,10 +2,15 @@
     <ion-avatar>
       <img src="{{getDataPerson(assing.idPerson).foto}}">
     </ion-avatar>
-    <ion-icon name="repeat-outline"></ion-icon>
+    <ion-item id="icon">
+      <ion-icon name="repeat-outline"></ion-icon>
+    </ion-item>
     <ion-avatar>
       <img src="{{getDataTask(assing.idTask).foto}}">
     </ion-avatar>
+    <ion-text>
+      {{assing.dateTime | date: 'short'}}
+    </ion-text>
     <ion-button slot="end" (click)="onEditClick()"><ion-icon name="create-outline"></ion-icon></ion-button>
     <ion-button slot="end" color="danger" (click)="onDeleteClick()"><ion-icon name="trash-outline"></ion-icon></ion-button>
 </ion-item>

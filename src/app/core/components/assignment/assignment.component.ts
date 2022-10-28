@@ -24,13 +24,10 @@ export class AssignmentComponent implements OnInit {
 
   getDataPerson(id:number){
     return this._dataPerson.getPersonById(id);
-    
   }
   getDataTask(id:number){
     return this._dataTask.getTaskById(id);
   }
-
-
   onEditClick(){
     this.onEdit.emit(this.assing);
   }

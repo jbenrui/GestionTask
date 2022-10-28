@@ -12,9 +12,9 @@
       <ion-label>Tareas</ion-label>
   </ion-list-header>
   <ion-list *ngFor="let assings of getAssing()"> 
-    <app-assignment [assing]="assings" (onEdit)="onEditPerson($event)"></app-assignment>
+    <app-assignment [assing]="assings" (onEdit)="onEditAssign($event)" (onDelete)="onDeleteAssign($event)"></app-assignment>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
-      <ion-fab-button (click)="onNewPerson()"><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="onNewAssign()"><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-fab-button>
   </ion-fab>
 </ion-content>

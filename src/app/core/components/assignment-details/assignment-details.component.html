@@ -11,12 +11,29 @@
     <ion-item>
       <ion-list>
         <ion-item >
-          <ion-select placeholder="Nombre Persona">
-            <ion-select-option *ngFor="let person of getPeople()" value="{{person.id}}">{{person.name}}</ion-select-option>
+          <ion-select formControlName="idPerson" placeholder="Nombre Persona">
+            <ion-select-option *ngFor="let person of getPeople()" [value]="person.id">{{person.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-icon name="repeat-outline"></ion-icon>
+      <ion-list>
+        <ion-item>
+          <ion-select  formControlName="idTask" placeholder="Nombre Tarea">
+            <ion-select-option *ngFor="let task of getTask()" [value]="task.id">{{task.nombre}}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
     </ion-item>
+    <ion-item>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="datetime" (ionChange)="onChange($event)"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+      
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
   </form>
 </ion-content>
