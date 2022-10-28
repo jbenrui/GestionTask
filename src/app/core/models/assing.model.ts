@@ -4,4 +4,5 @@ export interface Assing{
     idPerson:number;
     dateTime:string;
     createdAt:string;
+    
 }
