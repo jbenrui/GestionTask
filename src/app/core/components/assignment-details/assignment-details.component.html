@@ -2,37 +2,19 @@
   <ion-toolbar>
     <ion-title slot="end">Formulario de Edición de Asignaciones.</ion-title>
     <ion-buttons slot="start">
-      <ion-button (click)="onDismiss(null)">X</ion-button>
+      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-    <ion-item>
-      <ion-list>
-        <ion-item >
-          <ion-select formControlName="idPerson" placeholder="Nombre Persona">
-            <ion-select-option *ngFor="let person of getPeople()" [value]="person.id">{{person.nombre}}</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <ion-icon name="repeat-outline"></ion-icon>
-      <ion-list>
-        <ion-item>
-          <ion-select  formControlName="idTask" placeholder="Nombre Tarea">
-            <ion-select-option *ngFor="let task of getTask()" [value]="task.id">{{task.nombre}}</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-    </ion-item>
-    <ion-item>
+      <app-person-selectable formControlName="idPerson"></app-person-selectable>
       <ion-datetime-button datetime="datetime"></ion-datetime-button>
       <ion-modal [keepContentsMounted]="true">
         <ng-template>
           <ion-datetime id="datetime" (ionChange)="onChange($event)"></ion-datetime>
         </ng-template>
       </ion-modal>
-    </ion-item>
       
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
   </form>

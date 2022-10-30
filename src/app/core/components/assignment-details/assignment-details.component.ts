@@ -2,10 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { Assing } from '../../models/assing.model';
-import { Person } from '../../models/person.model';
-import { Task } from '../../models/task.model';
-import { DataPersonService } from '../../services/dataperson.service';
-import { DataTaskService } from '../../services/datatask.service';
 
 
 @Component({
@@ -30,22 +26,17 @@ export class AssignmentDetailsComponent implements OnInit {
     }
 
   }
-  constructor(private formBuilder:FormBuilder,
-              private personSVC:DataPersonService,
-              private taskSVC:DataTaskService,
+  constructor(
+              private fb:FormBuilder,
               private modal:ModalController //Instacia la clase, esta clase sirve para controlar el evento del modal. Poder crearlo y cerrarlo
     ) {
-    this.form = this.formBuilder.group({ //Creo el formulario
-      id:0,
+    this.form = this.fb.group({ //Creo el formulario
+      id:[0],
       idPerson:[0,Validators.min(1)],
       idTask:[0,Validators.min(1)],
       dateTime:["",Validators.required]
     });
   }
-
-  @Input() person:Person;
-
-  @Input() task:Task;
 
   ngOnInit() {}
 
@@ -58,16 +49,7 @@ export class AssignmentDetailsComponent implements OnInit {
     this.modal.dismiss(null,'cancel'); //Si el modal se cierra.No envia el objeto vacio por lo tanto no se modifica, ni se añade nada.
   }
 
-  getPeople(){
-    return this.personSVC.getPeople();
-  }
-
-  getTask(){
-    return this.taskSVC.getTask();
-  }
-
   onChange(event){
-    console.log(event.detail.value);
     this.form.controls.dateTime.setValue(event.detail.value);
   }
 
