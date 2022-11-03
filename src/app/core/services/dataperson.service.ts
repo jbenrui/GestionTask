@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Person } from '../models/person.model';
 
 
@@ -32,7 +33,11 @@ export class DataPersonService {
       foto: 'http://drive.google.com/uc?export=view&id=1VFUSfQZoVjVFkI6m73vba2_G4oGDUR7O'
     }
 
-  ]
+  ];
+
+  private personSubject:BehaviorSubject<Person[]> = new BehaviorSubject(this._person);
+  public person$ = this.personSubject.asObservable();
+
   id:number = this._person.length+1;
   constructor(
     

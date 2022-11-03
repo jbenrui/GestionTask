@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Task } from '../models/task.model';
 
 @Injectable({
@@ -30,7 +31,11 @@ export class DataTaskService {
       tiempo:  2400,
       foto: 'http://drive.google.com/uc?export=view&id=1cdWDAyNb41PKLDYBY7oqEJr6Oq41-hgD'
     }
-  ]
+  ];
+
+  private taskSubject:BehaviorSubject<Task[]> = new BehaviorSubject(this._task);
+  public task$ = this.taskSubject.asObservable();
+
   id:number = this._task.length+1;
   constructor() {
 

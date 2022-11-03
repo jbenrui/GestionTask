@@ -23,7 +23,7 @@ export class PeoplePage implements OnInit{
 
   
   getPeople(){ //Creo el metodo para devolver personas
-    return this.dataPerson.getPeople(); //Llamo al metodo de la clase DataPersonService y lo devuelvo
+    return this.dataPerson.person$; //Llamo al metodo de la clase DataPersonService y lo devuelvo
   }
 
   async presentPersonForm(person:Person){
@@ -31,7 +31,8 @@ export class PeoplePage implements OnInit{
       component:PersonDetailsComponent,
       componentProps:{
         person:person
-      }
+      },
+      //cssClass:"modal-full-right-side" Pone el modal a full en la derecha
     });
     modal.present();
     modal.onDidDismiss().then(result=>{

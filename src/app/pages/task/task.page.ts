@@ -24,7 +24,8 @@ export class TaskPage implements OnInit {
   }
 
   getTask(){
-    return this.dataTask.getTask();
+    return this.dataTask.task$;
+    //return this.dataTask.getTask(); // No me deja borrar, y no sale ningun error en la consola.
   }
   async presentTaskForm(task:Task){
     const modal = await this.modal.create({
