@@ -24,7 +24,7 @@ export class AsingnsPage implements OnInit {
 
   
   getAssing(){
-    return this._dataAssingment.getAssings();
+    return this._dataAssingment.assing$;
     
   }
 

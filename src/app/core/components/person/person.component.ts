@@ -21,7 +21,7 @@ export class PersonComponent implements OnInit {
   }
 
   onEditClick(){
-    this.onEdit.emit(this.person);
+    this.onEdit.emit(this.person); //Cuando se hace click en el boton del template emite hacia fuera el objeto person
   }
 
   onDeleteClick(){

@@ -1,6 +1,7 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonAccordionGroup, IonDatetime } from '@ionic/angular';
+import * as moment from 'moment';
 import { Assing } from '../../models/assing.model';
 
 export const USER_PROFILE_VALUE_ACCESSOR: any = {
@@ -16,17 +17,25 @@ export const USER_PROFILE_VALUE_ACCESSOR: any = {
 })
 export class DateTimeSelectableComponent implements OnInit, ControlValueAccessor {
 
+  private moment:any = moment;
+
   selectedDateTime:string=null;
-  propagateChage = (_:any) => {}
+
+  propagateChage = (_:any) => {} //Propaga los cambios al componente padre.
+
   isDisabled:boolean = false;
-  constructor() { }
+
+  constructor() { 
+    this.selectedDateTime=this.moment().toISOString;
+  }
+  
   registerOnTouched(fn: any): void {
     
   }
   
   ngOnInit() {}
 
-  writeValue(obj:any): void{
+  writeValue(obj:any): void{ //Escribe el nuevo valor en la variable.
     this.selectedDateTime = obj;
   }
 

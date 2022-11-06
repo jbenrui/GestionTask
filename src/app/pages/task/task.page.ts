@@ -71,13 +71,7 @@ export class TaskPage implements OnInit {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            //if(task.id == this.assingSVC.getAssingsByIdPerson(task.id).idTask){ //Si la persona esta asignada a una tarea no dejara no podra borrarla.
-              //console.log("Esta tarea esta asignada a una persona.");
-              
-              
-           // }else{
               this.dataTask.deleteTaskById(task.id);
-           // }
           },
         },
       ],

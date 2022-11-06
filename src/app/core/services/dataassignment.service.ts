@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Assing } from '../models/assing.model';
 import * as moment from 'moment-timezone';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -24,7 +25,10 @@ export class DataAssingmentService{
             dateTime:this.moment().add(1,'days').toISOString(),
             createdAt:this.moment().toISOString()
         }
-    ]
+    ];
+
+    private assingSubject:BehaviorSubject<Assing[]> = new BehaviorSubject(this._assing);
+    public assing$ = this.assingSubject.asObservable();
 
     id:number = this._assing.length+1;
     constructor(){}
@@ -63,5 +67,6 @@ export class DataAssingmentService{
 
     deleteAssignById(id:number){
         this._assing = this._assing.filter(p=>p.id != id); 
+        this.assingSubject.next(this._assing);
     }
 }
