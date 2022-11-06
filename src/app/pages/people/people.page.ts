@@ -73,13 +73,7 @@ export class PeoplePage implements OnInit{
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            //if(person.id == this.assingSVC.getAssingsByIdPerson(person.id).idPerson){ //Si la persona esta asignada a una tarea no dejara no podra borrarla.
-              console.log("Esta persona esta asignada a una tarea.");
-              
-              
-            //}else{
               this.dataPerson.deletePersonById(person.id);
-           // }
             
           },
         },
@@ -91,8 +85,29 @@ export class PeoplePage implements OnInit{
     const { role } = await alert.onDidDismiss();
   }
   
+  async onPersonExistsAlert(person){
+    const alert = await this.alert.create({
+      header: 'Error',
+      message: 'No es posible borrar la persona porque está asignada a una tarea',
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'close',
+          handler: () => {
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
   onDeletePerson(person){
-    this.onDeleteAlert(person);
+    if(!this.assingSVC.getAssingsById(person.id))
+      this.onDeleteAlert(person);
+    else
+      this.onPersonExistsAlert(person);
     
   }
 }

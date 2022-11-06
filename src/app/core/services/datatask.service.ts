@@ -50,7 +50,8 @@ export class DataTaskService {
   }
 
   deleteTaskById(id:number){
-    this._task = this._task.filter(p=>p.id != id); 
+    this._task = this._task.filter(p=>p.id != id);
+    this.taskSubject.next(this._task); 
   }
 
   addTask(task:Task){

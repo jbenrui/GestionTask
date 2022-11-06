@@ -10,13 +10,7 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
       <app-person-selectable formControlName="idPerson"></app-person-selectable>
       <app-task-selectable formControlName="idTask"></app-task-selectable>
-      <ion-datetime-button datetime="datetime"></ion-datetime-button>
-      <ion-modal [keepContentsMounted]="true">
-        <ng-template>
-          <ion-datetime id="datetime" (ionChange)="onChange($event)"></ion-datetime>
-        </ng-template>
-      </ion-modal>
-      
+      <app-date-time-selectable formControlName="dateTime"></app-date-time-selectable>
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
   </form>
 </ion-content>

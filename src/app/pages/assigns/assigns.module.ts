@@ -6,12 +6,19 @@ import { AssignmentDetailsComponent } from 'src/app/core/components/assignment-d
 import { AsingnsPageRoutingModule } from './assigns-routing.module';
 import { PersonSelectableComponent } from 'src/app/core/components/person-selectable/person-selectable.component';
 import { TaskSelectableComponent } from 'src/app/core/components/task-selectable/task-selectable.component';
+import { DateTimeSelectableComponent } from 'src/app/core/components/date-time-selectable/date-time-selectable.component';
 
 @NgModule({
   imports: [
     CoreModule,
     AsingnsPageRoutingModule
   ],
-  declarations: [AsingnsPage, AssignmentComponent , AssignmentDetailsComponent,PersonSelectableComponent,TaskSelectableComponent]
+  declarations: [AsingnsPage,
+    AssignmentComponent ,
+    AssignmentDetailsComponent,
+    PersonSelectableComponent,
+    TaskSelectableComponent,
+    DateTimeSelectableComponent
+  ]
 })
 export class AsingnsPageModule {}

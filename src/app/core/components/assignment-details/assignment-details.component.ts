@@ -41,8 +41,7 @@ export class AssignmentDetailsComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(){
-    console.log(this.form.value)
-      this.modal.dismiss({assing: this.form.value, mode: this.mode}, 'ok')//Si el modal es enviado, manda la informacion del objeto.
+    this.modal.dismiss({assing: this.form.value, mode: this.mode}, 'ok')//Si el modal es enviado, manda la informacion del objeto.
   }
 
   onDismiss(result){

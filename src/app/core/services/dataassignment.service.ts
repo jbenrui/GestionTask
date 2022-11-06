@@ -13,16 +13,16 @@ export class DataAssingmentService{
             id:1,
             idPerson:1,
             idTask:1,
-            dateTime:this.moment().add(1,'days').toLocaleString(),
-            createdAt:this.moment().toLocaleString()
+            dateTime:this.moment().add(1,'days').toISOString(),
+            createdAt:this.moment().toISOString()
 
         },
         {
             id:2,
             idPerson:2,
             idTask:2,
-            dateTime:this.moment().add(1,'days').toLocaleString(),
-            createdAt:this.moment().toLocaleString()
+            dateTime:this.moment().add(1,'days').toISOString(),
+            createdAt:this.moment().toISOString()
         }
     ]
 

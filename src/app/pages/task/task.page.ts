@@ -11,7 +11,6 @@ import { TaskDetailsComponent } from 'src/app/core/components/task-details/task-
 })
 export class TaskPage implements OnInit {
   public task:Task;
- 
   
   constructor(
     private dataTask:DataTaskService,  
@@ -88,5 +87,31 @@ export class TaskPage implements OnInit {
 
     const { role } = await alert.onDidDismiss();
   }
-  onDeleteTask(task){this.onDeleteAlert(task);}
+
+  async onTaskExistsAlert(task){
+    const alert = await this.alert.create({
+      header: 'Error',
+      message: 'No es posible borrar la persona porque está asignada a una tarea',
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'close',
+          handler: () => {
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
+
+  onDeleteTask(task){
+    if(!this.assingSVC.getAssingsById(task.id))
+      this.onDeleteAlert(task);
+    else
+      this.onTaskExistsAlert(task);
+    
+  }
 }

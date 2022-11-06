@@ -55,6 +55,7 @@ export class DataPersonService {
 
   deletePersonById(id:number){
     this._person = this._person.filter(p=>p.id != id); 
+    this.personSubject.next(this._person);
   }
 
   addPerson(person:Person){

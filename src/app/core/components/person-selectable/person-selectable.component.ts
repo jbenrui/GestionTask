@@ -4,7 +4,7 @@ import { IonAccordionGroup } from '@ionic/angular';
 import { DataPersonService, Person } from '../..';
 
 
-export const USER_PROFILE_VALUE_ACCESSOR: any = {
+export const USER_PROFILE_VALUE_ACCESSOR: any = { //Forma de proveer hacia el componente, de que es una clase y es capaz de hacer cambios en un formControl.
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => PersonSelectableComponent),
   multi: true
